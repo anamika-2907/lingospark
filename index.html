@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>LingoSpark</title>
+
+  <!-- Connect CSS -->
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- Paste your original HTML body content here -->
+
+  <header class="topbar">
+    <div class="brand">
+      <span>🦉</span>
+      <span>LingoSpark</span>
+    </div>
+
+    <div class="stats-row">
+      <div class="stat-pill">
+        🔥 <span id="streakCount">0</span>
+      </div>
+
+      <div class="stat-pill">
+        ⚡ <span id="totalXpCount">0</span> XP
+      </div>
+
+      <button id="soundToggleBtn" class="sound-btn on">
+        🔊 Sound On
+      </button>
+    </div>
+  </header>
+
+  <main class="container">
+
+    <!-- HOME VIEW -->
+    <section id="homeView">
+      <div class="hero">
+        <h1>Reverse-Engineered Micro-Lessons</h1>
+        <p>
+          Pick a track to test the core Duolingo mechanics:
+          hearts, XP combos and word-bank sentence building.
+        </p>
+      </div>
+
+      <div id="courseGrid" class="course-grid"></div>
+    </section>
+
+    <!-- LESSON VIEW -->
+    <section id="lessonView" class="hidden">
+
+      <div class="lesson-hud">
+        <button id="exitLessonBtn" class="exit-btn">
+          ✕
+        </button>
+
+        <div class="progress-track">
+          <div id="progressFill" class="progress-fill"></div>
+        </div>
+
+        <div class="hearts-pill">
+          ♥ <span id="heartsCount">5</span>
+        </div>
+      </div>
+
+      <div>
+        <span id="questionTypeBadge" class="question-badge">
+          Multiple Choice
+        </span>
+
+        <span id="reviewBadge" class="review-pill hidden">
+          Review Missed Question
+        </span>
+
+        <h2 id="questionPrompt" class="question-prompt"></h2>
+      </div>
+
+      <div id="mcContainer" class="options-list hidden"></div>
+
+      <div id="wbContainer" class="hidden">
+        <div id="answerTray" class="answer-tray">
+          <span class="answer-tray-placeholder">
+            Tap words below to build your answer...
+          </span>
+        </div>
+
+        <div id="wordBank" class="word-bank"></div>
+      </div>
+
+    </section>
+
+    <!-- RESULT VIEW -->
+    <section id="resultView" class="hidden">
+      <div class="result-card">
+
+        <div id="resultEmoji" class="result-emoji">🎉</div>
+
+        <h2 id="resultTitle">Lesson Complete!</h2>
+
+        <p id="resultSubtitle">
+          You mastered every question in this sprint.
+        </p>
+
+        <div class="result-stats">
+
+          <div class="result-stat-box">
+            <div id="earnedXpVal" class="result-stat-val">+0</div>
+            <div class="result-stat-lbl">XP Earned</div>
+          </div>
+
+          <div class="result-stat-box">
+            <div id="accuracyVal" class="result-stat-val">100%</div>
+            <div class="result-stat-lbl">Accuracy</div>
+          </div>
+
+          <div class="result-stat-box">
+            <div id="bestComboVal" class="result-stat-val">0x</div>
+            <div class="result-stat-lbl">Best Combo</div>
+          </div>
+
+        </div>
+
+        <div class="result-actions">
+          <button id="retryCourseBtn" class="btn-3d">
+            Practice Again
+          </button>
+
+          <button id="backHomeBtn" class="btn-3d blue">
+            All Courses
+          </button>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- BOTTOM BAR -->
+  <footer id="bottomBar" class="bottom-bar hidden">
+    <div class="bottom-inner">
+
+      <div id="feedbackText" class="feedback-text">
+        <h3 id="feedbackTitle"></h3>
+        <p id="feedbackSub"></p>
+      </div>
+
+      <div>
+        <button id="checkBtn" class="btn-3d" disabled>
+          Check
+        </button>
+
+        <button id="continueBtn" class="btn-3d hidden">
+          Continue
+        </button>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- Connect JavaScript -->
+  <script src="script.js"></script>
+
+</body>
+</html>
